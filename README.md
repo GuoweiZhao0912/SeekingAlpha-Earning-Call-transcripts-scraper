@@ -38,7 +38,7 @@ console.log(chipTexts);
 从代码中可以看到有一个很明显的属性 `data-test-id="chip"`，这通常是为测试准备的，非常稳定且唯一。
 
 ## 爬取链接
-在爬取文本链接时，对链接https://seekingalpha.com/symbol/{ticker}/earnings/transcripts进行爬取，(注意并不是https://seekingalpha.com/author/sa-transcripts/analysis?ticker={ticker}，该链接并不能获取完整的文本链接)，详细见文件`fetch records by ticker_调试`
+在爬取文本链接时，对链接 https://seekingalpha.com/symbol/{ticker}/earnings/transcripts 进行爬取，(注意并不是 https://seekingalpha.com/author/sa-transcripts/analysis?ticker={ticker} ，该链接并不能获取完整的文本链接)，详细见文件`fetch records by ticker_调试`
 
 1. 由于反爬机制的存在（我目前还没解决），我们需要手动做人机验证，我在程序中加入了暂停程序-手动验证的机制
 2. 由于种种原因，我们依然可能对某些代码爬取失败（比如网络），所以在爬取过程会对爬取成功和失败的代码进行保存，另外某些代码并不存在transcript，也进行了另外的保存。分别保存在progress.txt, failed.txt和failed.txt文件中
