@@ -1,23 +1,24 @@
 # SeekingAlpha-Earning-Call-transcripts-scraper
-seeking alpha是最常用的查看公司earning call transcript之一，在做金融与文本分析交叉研究中经常用到，以下是我爬取文本的策略。
+> 整个项目使用了GPT-4o, Genmini和Deepseek进行辅助。
+seeking alpha是最常用的获取公司earning call transcript的渠道之一，在做金融与文本分析交叉研究中经常会用到。以下是我爬取文本的策略。
 我的策略分为两步：
 1. 首先按照所有公司的代码获取每个代码包含的所有文本的页面url。
 2. 其次对所有的url进一步爬取每个url背后的文本
 这样做的好处是：
-1. 直接爬取所有文本，所能获取到的文本数量有上限，在无限的往下滑动页面时，并不能获取到所有的transcript，大概只能获取一年左右的数据。
-2. 其次，先爬取链接进行保存，会让整个爬取的过程更加稳健。
+1. 直接爬取所有文本，所能获取到的文本数量有上限，在无限的往下滑动页面时，并不能获取到所有的transcript，大概只能获取一年左右的数据。因此采取按照代码进行爬取的方式。
+2. 其次，先爬取链接进行保存，再对链接进行爬取，会让整个爬取的过程更加稳健。
 
 ## 获取所有公司代码
 - 如何获取seekingalpha的所有transcript的公司代码。
 点击进入网页：https://seekingalpha.com/author/sa-transcripts/analysis
 点击公司代码搜索框，点击搜索出现刷新出现所有的公司代码，然后右键进入开发者模式。
-选中其中一个代码后，在elements中找到html结构中的关于公司代码选项的内容，例如：
+选中其中一个代码后，在elements中找到html结构中的关于公司代码按钮选项的内容，例如：
 
 ```html
 <button class="relative inline-flex my-8 mr-14" type="button"><span class="Ly4_J inline-flex items-center rounded-4 RXlLr py-10 px-18 items-center text-x-large-r KQfXX" data-test-id="chip"><span class="vIR0R opacity-100 transition-opacity duration-200">AGYS (70)</span></span></button>
 ```
 
-进入console，输入代码，回车，会得到所有的公司代码，进行复制，保存到txt文件进行后续处理：
+进入console，输入以下javascript代码回车，会得到所有的公司代码，进行复制，保存到txt文件进行后续处理：
 
 ```javascript
 // 选择所有具有 data-test-id="chip" 的元素
