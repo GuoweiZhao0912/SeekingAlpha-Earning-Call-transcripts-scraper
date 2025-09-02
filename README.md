@@ -1,5 +1,6 @@
 # SeekingAlpha-Earning-Call-transcripts-scraper
 > 整个项目使用了GPT-4o, Genmini和Deepseek进行辅助。
+
 seeking alpha是最常用的获取公司earning call transcript的渠道之一，在做金融与文本分析交叉研究中经常会用到。以下是我爬取文本的策略。
 我的策略分为两步：
 1. 首先按照所有公司的代码获取每个代码包含的所有文本的页面url。
