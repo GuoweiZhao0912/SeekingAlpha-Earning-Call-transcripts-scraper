@@ -56,3 +56,4 @@ console.log(chipTexts);
 ```
 - 爬取完后，会出现很多无法爬取的链接，页面显示Whoops, we’ve hit a bottom.这类code都是XXX-DEFUNCT的形式，通常该代码已经失效或者已经退市，因此我们需要删除后缀重新爬取，处理过程可见`clean_mismatched.ipynb`
 - 该程序爬取速度较慢，但是能较为稳健的获得文本内容
+- 有任何问题可以联系我 zhaoguowei0912@gmail.com
