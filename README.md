@@ -1,10 +1,5 @@
 &emsp;
 
-- **Title**: Python 爬虫：爬取 Seeking Alpha 的财报电话会议文本
-- **Keywords**: 爬虫, Conference Calls, Playwright, B861
-
-&emsp;
-
 **概要：**
 
 本文介绍了如何使用 Python 和 Playwright 库，分两步高效爬取 Seeking Alpha 网站上上市公司的财报电话会议（Earnings Call Transcripts）文本。第一步按公司代码（Ticker）收集所有相关会议的链接，第二步逐条访问这些链接并提取会议正文。文章详细解释了每个步骤的技术实现，包括动态滚动加载、验证码处理、异常管理和断点续爬等关键环节。通过这种方法，研究人员可以系统获取高质量的财报电话会议文本数据，用于金融与会计领域的实证分析。
